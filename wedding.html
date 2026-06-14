@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이민지 & 김준호 결혼식에 초대합니다</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f5f0e8;}
+.inv{max-width:440px;margin:0 auto;background:#fffdf9;}
+.video-wrap{width:100%;aspect-ratio:16/9;background:#000;}
+.video-wrap iframe{width:100%;height:100%;border:none;}
+.hero{padding:40px 24px 32px;text-align:center;border-bottom:0.5px solid #f0ebe0;}
+.hero-date{font-size:12px;letter-spacing:3px;color:#b09070;margin-bottom:16px;}
+.hero-names{font-size:26px;font-weight:400;color:#2c2218;letter-spacing:1px;line-height:1.5;}
+.hero-and{font-size:18px;color:#c4a882;margin:0 10px;}
+.hero-sub{font-size:13px;color:#8a7a6a;margin-top:16px;line-height:1.9;}
+.divider{display:flex;align-items:center;gap:12px;padding:0 24px;margin:4px 0;}
+.divider-line{flex:1;height:0.5px;background:#e8e0d0;}
+.divider-dot{width:4px;height:4px;border-radius:50%;background:#c4a882;}
+.section{padding:28px 24px;}
+.section-title{font-size:11px;letter-spacing:3px;color:#b09070;text-align:center;margin-bottom:20px;}
+.greet-text{font-size:14px;color:#4a3a2a;line-height:2.1;text-align:center;}
+.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.family-card{text-align:center;padding:16px 10px;background:#faf7f2;border-radius:8px;border:0.5px solid #ede5d8;}
+.family-role{font-size:11px;color:#b09070;margin-bottom:6px;letter-spacing:1px;}
+.family-name{font-size:13px;color:#2c2218;font-weight:500;margin-bottom:3px;}
+.family-relation{font-size:12px;color:#8a7a6a;}
+.info-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
+.info-icon{width:32px;height:32px;border-radius:50%;background:#f5efe6;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.info-label{font-size:11px;color:#b09070;margin-bottom:3px;}
+.info-value{font-size:14px;color:#2c2218;line-height:1.7;}
+.map-wrap{border-radius:8px;overflow:hidden;margin-bottom:12px;border:0.5px solid #d8d0c0;}
+.map-wrap div{width:100%;height:200px;}
+.map-btn{width:100%;padding:10px;border:0.5px solid #d8d0c0;border-radius:6px;background:#fff;font-size:12px;color:#5a4a3a;text-align:center;text-decoration:none;display:block;}
+.map-btn:hover{background:#f5f0e8;}
+
+/* 슬라이더 */
+.slider-wrap{position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#f0ebe0;cursor:pointer;}
+.slider-track{display:flex;height:100%;transition:transform 0.4s cubic-bezier(.4,0,.2,1);}
+.slide{min-width:100%;height:100%;}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(44,34,24,0.45);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;}
+.slider-btn-left{left:10px;}
+.slider-btn-right{right:10px;}
+.slider-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
+.slider-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;transition:background 0.2s;}
+.slider-dot.active{background:#fff;}
+.slider-count{position:absolute;top:10px;right:12px;background:rgba(0,0,0,0.4);color:#fff;font-size:11px;padding:3px 8px;border-radius:10px;}
+
+.account-item{background:#faf7f2;border:0.5px solid #ede5d8;border-radius:8px;padding:14px 16px;margin-bottom:10px;}
+.account-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.account-who{font-size:12px;color:#b09070;}
+.account-copy{font-size:11px;color:#8a7a6a;cursor:pointer;padding:4px 10px;border:0.5px solid #d8d0c0;border-radius:4px;background:#fff;}
+.account-copy:hover{background:#f0ebe0;}
+.account-bank{font-size:13px;color:#2c2218;font-weight:500;}
+.account-num{font-size:13px;color:#5a4a3a;}
+.gb-section{padding:28px 24px;border-top:0.5px solid #f0ebe0;}
+.gb-textarea{width:100%;padding:11px 14px;border:0.5px solid #d8d0c0;border-radius:6px;font-size:13px;background:#fff;color:#2c2218;resize:none;height:70px;margin-bottom:8px;font-family:inherit;}
+.gb-row{display:flex;gap:8px;margin-bottom:20px;}
+.gb-name{flex:1;padding:10px 14px;border:0.5px solid #d8d0c0;border-radius:6px;font-size:13px;background:#fff;color:#2c2218;font-family:inherit;}
+.gb-submit{padding:10px 18px;background:#2c2218;border:none;border-radius:6px;color:#f5efe6;font-size:13px;cursor:pointer;}
+.gb-submit:hover{background:#3d3025;}
+.gb-list{display:flex;flex-direction:column;gap:10px;}
+.gb-item{background:#faf7f2;border:0.5px solid #ede5d8;border-radius:8px;padding:12px 14px;}
+.gb-item-header{display:flex;justify-content:space-between;margin-bottom:4px;}
+.gb-item-name{font-size:12px;color:#b09070;font-weight:500;}
+.gb-item-time{font-size:11px;color:#c4b4a0;}
+.gb-item-msg{font-size:13px;color:#3a2a1a;line-height:1.7;}
+.gb-empty{text-align:center;padding:2rem;font-size:13px;color:#b09070;}
+.gb-count{font-size:12px;color:#8a7a6a;margin-bottom:14px;}
+.footer{text-align:center;padding:24px;font-size:11px;color:#b09070;border-top:0.5px solid #f0ebe0;line-height:1.9;}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#2c2218;color:#f5efe6;padding:10px 20px;border-radius:20px;font-size:13px;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:999;white-space:nowrap;}
+.toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<div class="inv">
+
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/-le_iCMOV8c?rel=0&showinfo=0" allowfullscreen></iframe>
+  </div>
+
+  <div class="hero">
+    <div class="hero-date">2025 · 11 · 08 · SAT</div>
+    <div class="hero-names">이민지<span class="hero-and">&</span>김준호</div>
+    <div class="hero-sub">두 사람이 하나가 되는 날<br>함께해 주세요</div>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <div class="section">
+    <div class="section-title">INVITATION</div>
+    <p class="greet-text">
+      서로가 서로에게 가장 좋은 사람이 되어<br>
+      이제 함께 걸어가려 합니다.<br><br>
+      저희의 새로운 시작을<br>
+      따뜻한 마음으로 축복해 주시면<br>
+      더없는 기쁨이 되겠습니다.
+    </p>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <div class="section">
+    <div class="section-title">FAMILY</div>
+    <div class="family-grid">
+      <div class="family-card">
+        <div class="family-role">신부측</div>
+        <div class="family-name">이철수 · 박영희</div>
+        <div class="family-relation">의 장녀 민지</div>
+      </div>
+      <div class="family-card">
+        <div class="family-role">신랑측</div>
+        <div class="family-name">김대호 · 최순희</div>
+        <div class="family-relation">의 장남 준호</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <div class="section">
+    <div class="section-title">DATE & PLACE</div>
+    <div class="info-row">
+      <div class="info-icon">📅</div>
+      <div>
+        <div class="info-label">일시</div>
+        <div class="info-value">2025년 11월 8일 토요일<br>오후 1시 30분</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">장소</div>
+        <div class="info-value">더채플앳청담<br>서울 강남구 청담동 79-5<br><span style="font-size:12px;color:#8a7a6a;">지하 1층 웨딩홀</span></div>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <div id="map"></div>
+    </div>
+    <a class="map-btn" href="https://map.kakao.com/link/to/더채플앳청담,37.5246,127.0454" target="_blank">카카오맵으로 보기</a>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <!-- 슬라이더 갤러리 -->
+  <div class="section" style="padding-bottom:8px;">
+    <div class="section-title">GALLERY</div>
+  </div>
+  <div class="slider-wrap" id="slider-wrap">
+    <div class="slider-track" id="slider-track">
+      <div class="slide"><img src="https://i.imgur.com/NrCkkav.png" alt="사진1"></div>
+      <div class="slide"><img src="https://i.imgur.com/eqWm2Q9.png" alt="사진2"></div>
+      <div class="slide"><img src="https://i.imgur.com/v8gmeEN.png" alt="사진3"></div>
+      <div class="slide"><img src="https://i.imgur.com/TynDGeK.png" alt="사진4"></div>
+      <div class="slide"><img src="https://i.imgur.com/JVtwc8o.png" alt="사진5"></div>
+      <div class="slide"><img src="https://i.imgur.com/NEpJja3.png" alt="사진6"></div>
+      <div class="slide"><img src="https://i.imgur.com/SOS8aTJ.png" alt="사진7"></div>
+      <div class="slide"><img src="https://i.imgur.com/5jy7fG8.png" alt="사진8"></div>
+      <div class="slide"><img src="https://i.imgur.com/WcW18B5.png" alt="사진9"></div>
+      <div class="slide"><img src="https://i.imgur.com/rt8GMMO.png" alt="사진10"></div>
+    </div>
+    <button class="slider-btn slider-btn-left" onclick="slideMove(-1)">&#8249;</button>
+    <button class="slider-btn slider-btn-right" onclick="slideMove(1)">&#8250;</button>
+    <div class="slider-dots" id="slider-dots"></div>
+    <div class="slider-count" id="slider-count">1 / 10</div>
+  </div>
+
+  <div class="divider" style="margin-top:16px;"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <div class="section">
+    <div class="section-title">ACCOUNT</div>
+    <div class="account-item">
+      <div class="account-top">
+        <div class="account-who">신부 이민지</div>
+        <button class="account-copy" onclick="copyText('카카오뱅크 3333-12-3456789 이민지')">복사</button>
+      </div>
+      <div class="account-bank">카카오뱅크</div>
+      <div class="account-num">3333-12-3456789</div>
+    </div>
+    <div class="account-item">
+      <div class="account-top">
+        <div class="account-who">신랑 김준호</div>
+        <button class="account-copy" onclick="copyText('신한은행 110-456-789012 김준호')">복사</button>
+      </div>
+      <div class="account-bank">신한은행</div>
+      <div class="account-num">110-456-789012</div>
+    </div>
+
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+
+  <div class="gb-section">
+    <div class="section-title">GUESTBOOK</div>
+    <textarea class="gb-textarea" placeholder="축하 메시지를 남겨주세요 💕" id="gb-msg"></textarea>
+    <div class="gb-row">
+      <input class="gb-name" placeholder="이름" id="gb-name">
+      <button class="gb-submit" onclick="addGuest()">남기기</button>
+    </div>
+    <div class="gb-count" id="gb-count"></div>
+    <div class="gb-list" id="gb-list">
+      <div class="gb-empty">첫 번째 축하 메시지를 남겨주세요 💕</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    이민지 & 김준호의 결혼식에 초대합니다<br>
+    2025년 11월 8일 토요일 오후 1시 30분<br>
+    더채플앳청담
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcaab4d04aa1ec84da8bd25f3e7588a7"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, orderBy, query, onSnapshot } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBpA8SFgjRrzoqsbRn_m-ZbOBYzzAVaqv8",
+    authDomain: "wedding-project-357a1.firebaseapp.com",
+    projectId: "wedding-project-357a1",
+    storageBucket: "wedding-project-357a1.firebasestorage.app",
+    messagingSenderId: "647862544472",
+    appId: "1:647862544472:web:4892f465981e0eddfc422d"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  function timeAgo(ts) {
+    if (!ts) return "방금 전";
+    const diff = Math.floor((Date.now() - ts) / 1000);
+    if (diff < 60) return "방금 전";
+    if (diff < 3600) return Math.floor(diff/60) + "분 전";
+    if (diff < 86400) return Math.floor(diff/3600) + "시간 전";
+    return Math.floor(diff/86400) + "일 전";
+  }
+
+  function renderMessages(msgs) {
+    const list = document.getElementById("gb-list");
+    const count = document.getElementById("gb-count");
+    if (!msgs.length) {
+      list.innerHTML = '<div class="gb-empty">첫 번째 축하 메시지를 남겨주세요 💕</div>';
+      count.textContent = "";
+      return;
+    }
+    count.textContent = "총 " + msgs.length + "개의 축하 메시지";
+    list.innerHTML = msgs.map(m => `
+      <div class="gb-item">
+        <div class="gb-item-header">
+          <span class="gb-item-name">${m.name}</span>
+          <span class="gb-item-time">${timeAgo(m.ts)}</span>
+        </div>
+        <div class="gb-item-msg">${m.msg}</div>
+      </div>
+    `).join("");
+  }
+
+  const q = query(collection(db, "guestbook"), orderBy("ts", "desc"));
+  onSnapshot(q, (snap) => {
+    renderMessages(snap.docs.map(d => d.data()));
+  });
+
+  window.addGuest = async function() {
+    const name = document.getElementById("gb-name").value.trim();
+    const msg = document.getElementById("gb-msg").value.trim();
+    if (!name || !msg) { showToast("이름과 메시지를 입력해주세요"); return; }
+    try {
+      await addDoc(collection(db, "guestbook"), { name, msg, ts: Date.now() });
+      document.getElementById("gb-name").value = "";
+      document.getElementById("gb-msg").value = "";
+      showToast("메시지가 등록되었습니다 💕");
+    } catch(e) {
+      showToast("오류가 발생했습니다. 다시 시도해주세요.");
+    }
+  };
+</script>
+
+<script>
+  // 카카오맵
+  window.addEventListener('load', function() {
+    if (typeof kakao !== 'undefined' && kakao.maps) {
+      var mapOption = { center: new kakao.maps.LatLng(37.5034, 126.7660), level: 3 };
+      var map = new kakao.maps.Map(document.getElementById('map'), mapOption);
+      new kakao.maps.Marker({ position: new kakao.maps.LatLng(37.5034, 126.7660), map: map });
+    }
+  });
+
+  // 슬라이더
+  var current = 0;
+  var total = 10;
+  var track = document.getElementById('slider-track');
+  var dotsWrap = document.getElementById('slider-dots');
+  var countEl = document.getElementById('slider-count');
+
+  // 도트 생성
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement('div');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('data-i', i);
+    dot.onclick = (function(idx){ return function(){ goSlide(idx); }; })(i);
+    dotsWrap.appendChild(dot);
+  }
+
+  // 터치 스와이프
+  var touchStartX = 0;
+  var sliderWrap = document.getElementById('slider-wrap');
+  sliderWrap.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+  sliderWrap.addEventListener('touchend', function(e){
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) slideMove(diff > 0 ? 1 : -1);
+  }, {passive:true});
+
+  function goSlide(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    countEl.textContent = (current + 1) + ' / ' + total;
+    document.querySelectorAll('.slider-dot').forEach(function(d, i){
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function slideMove(dir) { goSlide(current + dir); }
+
+  // 계좌 복사
+  function copyText(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => showToast("계좌번호가 복사되었습니다"));
+    } else { showToast("복사: " + text); }
+  }
+
+  function showToast(msg) {
+    var t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(function(){ t.classList.remove("show"); }, 2500);
+  }
+</script>
+</body>
+</html>
